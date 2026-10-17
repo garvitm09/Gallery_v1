@@ -1,0 +1,333 @@
+/* CuteImageCards.css - Isolated styles that won't affect other pages */
+
+/* Color Variables */
+:root {
+  --cute-pink: #FF9EC9;
+  --cute-pink-light: #FFCBE5;
+  --cute-pink-dark: #FF75AD;
+  --cute-blue: #A5D8FF;
+  --cute-blue-light: #D6ECFF;
+  --cute-blue-dark: #7CC0FF;
+  --cute-yellow: #FFEE93;
+  --cute-purple: #D4BBFF;
+  --white: #FFFFFF;
+  --gray-light: #F8F8F8;
+  --text-color: #555555;
+}
+
+/* Base Styles */
+.cute-cards-container {
+  font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: var(--cute-blue-light);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Styles */
+.cute-cards-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 36px;
+  color: var(--cute-pink-dark);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  animation: bounce 2s infinite alternate;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background-color: var(--white);
+  border: 2px solid var(--cute-pink);
+  border-radius: 30px;
+  color: var(--cute-pink-dark);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.filter-btn:hover {
+  background-color: var(--cute-pink-light);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(255, 158, 201, 0.3);
+}
+
+.filter-btn.active {
+  background-color: var(--cute-pink);
+  color: var(--white);
+}
+
+/* Card Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  perspective: 1000px;
+  position: relative;
+  height: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: var(--cute-blue-light);
+}
+
+.card-back {
+  background: linear-gradient(135deg, var(--cute-pink-light), var(--cute-blue-light));
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.back-content {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.back-content h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: var(--cute-pink-dark);
+}
+
+.date-badge {
+  background-color: var(--cute-yellow);
+  color: var(--text-color);
+  padding: 5px 15px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.back-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.card-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.heart-btn {
+  background-color: var(--cute-pink);
+  color: var(--white);
+  font-size: 18px;
+}
+
+.share-btn {
+  background-color: var(--cute-blue);
+  color: var(--text-color);
+}
+
+.card-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Card Image and Overlay */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.flip-info {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  display: block;
+  font-size: 14px;
+}
+
+.card:hover .flip-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Shine Effect */
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-shine {
+  opacity: 1;
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  color: var(--cute-pink);
+  opacity: 0.3;
+  font-size: 20px;
+  animation: floatUp linear infinite;
+}
+
+/* Animations */
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-btn {
+    width: 80%;
+  }
+}

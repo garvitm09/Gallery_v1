@@ -1,0 +1,106 @@
+/* src/components/MemoryStats.css */
+
+.memory-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto 2rem;
+    background: rgba(255, 255, 255, 0.5);
+  max-width: 1000px;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.memory-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+}
+
+.memory-icon {
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.heart {
+  color: #f43f5e;
+}
+
+.image {
+  color: #6366f1;
+}
+
+.gift {
+  color: #a855f7;
+}
+
+.star {
+  color: #facc15;
+}
+
+.memory-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.memory-label {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .memory-stats {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .memory-value {
+    font-size: 1.5rem;
+  }
+
+  .memory-label {
+    font-size: 0.85rem;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .memory-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .memory-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .memory-value {
+    font-size: 1.25rem;
+  }
+
+  .memory-label {
+    font-size: 0.8rem;
+  }
+}

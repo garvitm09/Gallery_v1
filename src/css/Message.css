@@ -1,0 +1,154 @@
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px);
+  opacity: 0.4;
+  z-index: 0; /* push behind content but above <body> */
+}
+
+/* Typing content above background */
+.typing-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  z-index: 1;
+}
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.love-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  animation: float 4s ease-in-out infinite;
+}
+
+.love-img-left {
+  animation-delay: 0s;
+}
+.love-img-right {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.anniversary-text {
+  font-size: 1.8rem;
+  color: #ff3366;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.typing-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  color: black;
+  max-width: 700px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  z-index: 2;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Cursor blinking */
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .love-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .anniversary-text {
+    font-size: 1.4rem;
+  }
+
+  .typing-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .love-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .anniversary-text {
+    font-size: 1.2rem;
+  }
+
+  .typing-text {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+/* .typing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffe6e6, #e6f0ff);
+  padding: 20px;
+}
+
+.typing-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: red;
+  max-width: 600px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+} */

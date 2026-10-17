@@ -1,0 +1,239 @@
+.wrapped-root {
+  position: fixed;
+  inset: 0;
+  background: black;
+  overflow: hidden;
+}
+
+.month-slide {
+  position: absolute;
+  inset: 0;
+  color: white;
+}
+
+.month-slide h1 {
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+}
+
+.img {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* JANUARY */
+.january .big {
+  width: 60vw;
+  height: 70vh;
+  top: 20%;
+  left: 20%;
+}
+
+.january .left {
+  width: 22vw;
+  height: 30vh;
+  bottom: 12%;
+  left: 8%;
+}
+
+.january .right {
+  width: 22vw;
+  height: 30vh;
+  bottom: 12%;
+  right: 8%;
+}
+
+/* FEBRUARY */
+.february .scatter {
+  width: 24vw;
+  height: 32vh;
+}
+
+.february .img-0 { top: 18%; left: 10%; }
+.february .img-1 { top: 14%; right: 12%; }
+.february .img-2 { bottom: 18%; left: 14%; }
+.february .img-3 { bottom: 14%; right: 16%; }
+
+/* MARCH */
+.march .full {
+  width: 70vw;
+  height: 22vh;
+  left: 15%;
+}
+
+
+/* Shared image positioning */
+.august .img,
+.september .img,
+.october .img,
+.november .img,
+.december .img {
+  position: absolute;
+  width: min(72vw, 280px);
+  height: min(90vw, 380px);
+
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Position variants */
+.drift-0 { top: 20%; left: 10%; }
+.drift-1 { top: 30%; right: 12%; }
+.drift-2 { bottom: 18%; left: 28%; }
+
+.pan-0 { top: 18%; left: 15%; }
+.pan-1 { top: 26%; right: 10%; }
+.pan-2 { bottom: 16%; left: 25%; }
+
+.glitch-0 { top: 16%; left: 12%; }
+.glitch-1 { top: 10%; right: 14%; }
+.glitch-2 { bottom: 20%; left: 20%; }
+.glitch-3 { bottom: 14%; right: 16%; }
+
+.fade-0 { top: 22%; left: 18%; }
+.fade-1 { top: 26%; left: 22%; }
+.fade-2 { top: 30%; left: 26%; }
+
+.explode-0 { top: 18%; left: 12%; }
+.explode-1 { top: 10%; right: 14%; }
+.explode-2 { bottom: 20%; left: 22%; }
+.explode-3 { bottom: 14%; right: 16%; }
+.explode-4 { top: 40%; left: 38%; }
+
+
+
+
+
+/* .wrapped-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  background: black;
+  overflow: hidden;
+}
+.wrapped-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.month-title {
+  position: absolute;
+  bottom: 20%;
+  left: 6%;
+  font-size: clamp(3rem, 12vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+}
+
+.photo-cluster {
+ position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.photo {
+  position: absolute;
+  width: clamp(140px, 28vw, 260px);
+  height: clamp(180px, 36vw, 340px);
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.photo-0 { 
+  top: 14%; left: 10%; 
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+
+.photo-1 { 
+  top: 8%; right: 12%; 
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+.photo-2 { 
+  bottom: 18%; left: 18%; 
+  transform: rotate(4deg);
+  z-index: 3;
+}
+
+.photo-3 { 
+  bottom: 12%; right: 14%; 
+  transform: rotate(-5deg);
+  z-index: 4;
+}
+
+.photo-4 { 
+  top: 38%; left: 38%; 
+  transform: rotate(2deg);
+  z-index: 5;
+}
+
+.photo-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.grid-photo {
+  position: absolute;
+  width: clamp(140px, 28vw, 260px);
+  height: clamp(180px, 36vw, 340px);
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.grid-photo:nth-child(1) { top: 12%; left: 10%; transform: rotate(-6deg); }
+.grid-photo:nth-child(2) { top: 8%; right: 12%; transform: rotate(5deg); }
+.grid-photo:nth-child(3) { bottom: 18%; left: 18%; transform: rotate(4deg); }
+.grid-photo:nth-child(4) { bottom: 14%; right: 14%; transform: rotate(-5deg); }
+.grid-photo:nth-child(5) { top: 38%; left: 38%; transform: rotate(2deg); }
+
+.caption {  
+  position: absolute;
+  bottom: 22%;
+  left: 6%;
+  max-width: 70%;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  color: white;
+}
+
+.controls {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.controls button {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 999px;
+} */

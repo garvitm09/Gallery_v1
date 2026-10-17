@@ -1,0 +1,79 @@
+.navbar {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 120px;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative; /* or fixed if you want it sticky */
+  z-index: 1000;   
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #a855f7;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+}
+.menu-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  z-index: 100;
+  min-width: 160px;
+  border: 1px solid #f3e8ff;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #6b21a8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.dropdown a:hover {
+  background: #f3e8ff;
+  color: #a855f7;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1rem;
+    /* flex-direction: column; */
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .menu-icon {
+    font-size: 1.25rem;
+  }
+}

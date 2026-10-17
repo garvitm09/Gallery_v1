@@ -1,0 +1,120 @@
+.love-test-container {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif;
+  background: var(--cute-blue-light);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.love-question {
+  font-size: 32px;
+  color: var(--cute-pink-dark);
+  margin-bottom: 40px;
+  animation: pulse 2s infinite;
+}
+
+.love-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.yes-btn {
+  background: var(--cute-pink);
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.yes-btn:hover {
+  background: var(--cute-pink-dark);
+  transform: scale(1.2);
+}
+
+.no-btn {
+  background: var(--cute-blue);
+  color: var(--text-color);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.no-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce animation for Yes */
+.bounce {
+  animation: bounceBtn 1s infinite alternate;
+}
+
+@keyframes bounceBtn {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+/* Result message */
+.love-answer {
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.answer-text {
+  font-size: 32px;
+  color: var(--cute-purple);
+  margin-bottom: 15px;
+}
+
+.answer-sub {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+/* Floating hearts */
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  color: var(--cute-pink);
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Extra animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
