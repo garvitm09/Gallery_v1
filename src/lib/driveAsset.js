@@ -1,4 +1,5 @@
-/** Returns a same-origin Vercel Function URL for an asset stored in the private Drive folder. */
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export function driveAsset(fileName) {
-  return `/api/drive-asset?name=${encodeURIComponent(fileName)}`;
+  return `${API_BASE_URL}/api/drive-asset?name=${encodeURIComponent(fileName)}`;
 }
