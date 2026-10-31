@@ -137,14 +137,20 @@ export default async function handler(req, res) {
 
     media.data.pipe(res);
   } catch (error) {
-    console.error("Drive asset request failed:", error.message);
+  console.error("Drive asset request failed:", {
+    message: error.message,
+    code: error.code,
+    status: error.response?.status,
+    details: error.response?.data,
+  });
 
-    if (!res.headersSent) {
-      return res.status(500).json({
-        error: "Unable to load asset from Google Drive",
-      });
-    }
-
-    res.end();
+  if (!res.headersSent) {
+    return res.status(500).json({
+      error: error.message,
+      googleStatus: error.response?.status || null,
+    });
   }
+
+  res.end();
+}
 }

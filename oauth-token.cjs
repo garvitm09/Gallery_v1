@@ -4,7 +4,7 @@ const { google } = require("googleapis");
 const http = require("http");
 const { URL } = require("url");
 
-const REDIRECT_URI = "http://localhost:3000/oauth2callback";
+const REDIRECT_URI = "https://gallery-v1-cgs5.onrender.com";
 const SCOPES = [
   "https://www.googleapis.com/auth/drive.readonly",
 ];

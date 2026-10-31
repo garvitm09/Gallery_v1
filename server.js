@@ -33,7 +33,7 @@ app.all("/api/drive-asset", (req, res) => {
   return driveAssetHandler(req, res);
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Gallery backend listening on port ${PORT}`);
